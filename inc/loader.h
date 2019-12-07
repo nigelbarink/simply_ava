@@ -1,4 +1,4 @@
-#ifdef LOADER_H
+#ifndef LOADER_H
 #define LOADER_H
 #include <stdint.h>
 #include <string>
@@ -33,7 +33,7 @@ class Section{
 
         Section() :binary(NULL), type(SEC_TYPE_NONE), vma(0), size(0), bytes(NULL){}
 
-        bool contains (uint64_t addr){ return (addr >= vma) && (addr-vma < size)}
+        bool contains (uint64_t addr){ return (addr >= vma) && (addr-vma < size);}
 
         Binary *binary;
         std::string name;
@@ -59,9 +59,9 @@ class Binary {
 
         Binary(): type(BIN_TYPE_AUTO), arch(ARCH_NONE), bits(0), entry(0){}
         
-        Section *get_text_section(){ for (auto &s : sections) return &s; return NULL}
+        Section *get_text_section(){ for (auto &s : sections) return &s; return NULL;}
 
-        std:string filename;
+        std::string filename;
         BinaryType type;
         std::string type_str;
         BinaryArch arch;
@@ -74,4 +74,4 @@ class Binary {
 
 int load_binary (std::string &fname, Binary *bin , Binary::BinaryType type);
 void unload_binary (Binary *bin);
-#endif 
+#endif
