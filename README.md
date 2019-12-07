@@ -10,3 +10,6 @@ More specifically the structure of executable , static and dynamic libaries.
 
 Following the instructions of the book  
 > Practical Binary analysis
+
+
+### Referenced material can be found here: [https://practicalbinaryanalysis.com/](https://practicalbinaryanalysis.com/)
